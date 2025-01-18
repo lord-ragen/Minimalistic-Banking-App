@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="natmobile.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:natmobile"
+    Shell.FlyoutBehavior="Disabled"
+    >
+    
+    <!-- These are my pages -->
+    <TabBar>
+        <!-- Accounts Page -->
+            <ShellContent
+                Title="Accounts"
+                ContentTemplate="{DataTemplate local:AccountsPage}"
+                Route="AccountsPage" 
+                Icon ="accountpage.png"/>
+        
+
+        <!-- Home Page -->
+            <ShellContent
+                Title="Home"
+                ContentTemplate="{DataTemplate local:HomePage}"
+                Route="HomePage" 
+                Icon="homepage.png"/>
+        
+
+        <!-- Settings Page -->
+            <ShellContent
+                Title="Settings &amp; Extra"
+                ContentTemplate="{DataTemplate local:SettingsPage}"
+                Route="SettingsPage" 
+                Icon="settings.png"/>
+       
+    </TabBar>
+
+</Shell>

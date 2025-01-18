@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="natmobile.SettingsPage"
+             Padding="20">
+             
+             
+   
+
+    <ScrollView>
+        <StackLayout Spacing="20">
+
+            <!-- About Me Section -->
+            <Label Text="About Me" TextColor="White" FontSize="Large" />
+            <StackLayout Spacing="10">
+                <!-- Username -->
+                <Label Text="Username" TextColor="Gray" FontSize="Small" />
+                <Frame BackgroundColor="#333333" CornerRadius="10" Padding="10">
+                    <StackLayout Orientation="Horizontal" Spacing="10">
+                        <Image Source="Resources/AppIcon/account.png" WidthRequest="25" HeightRequest="25" />
+                        <Entry Placeholder="Enter your username" TextColor="White" PlaceholderColor="Gray" />
+                    </StackLayout>
+                </Frame>
+                <!-- Email -->
+                <Label Text="E-mail Address" TextColor="Gray" FontSize="Small" />
+                <Frame BackgroundColor="#333333" CornerRadius="10" Padding="10">
+                    <StackLayout Orientation="Horizontal" Spacing="10">
+                        <Image Source="Resources/AppIcon/email.png" WidthRequest="25" HeightRequest="25" />
+                        <Entry Placeholder="Enter your e-mail address" TextColor="White" PlaceholderColor="Gray" Keyboard="Email" />
+                    </StackLayout>
+                </Frame>
+                <!-- Phone -->
+                <Label Text="Phone Number" TextColor="Gray" FontSize="Small" />
+                <Frame BackgroundColor="#333333" CornerRadius="10" Padding="10">
+                    <StackLayout Orientation="Horizontal" Spacing="10">
+                        <Image Source="Resources/AppIcon/phone.png" WidthRequest="25" HeightRequest="25" />
+                        <Entry Placeholder="Enter your phone number" TextColor="White" PlaceholderColor="Gray" Keyboard="Telephone" />
+                    </StackLayout>
+                </Frame>
+                <!-- Address -->
+                <Label Text="Address" TextColor="Gray" FontSize="Small" />
+                <Frame BackgroundColor="#333333" CornerRadius="10" Padding="10">
+                    <StackLayout Orientation="Horizontal" Spacing="10">
+                        <Image Source="Resources/AppIcon/address.png" WidthRequest="25" HeightRequest="25" />
+                        <Entry Placeholder="Enter your address" TextColor="White" PlaceholderColor="Gray" />
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+
+            <BoxView HeightRequest="1" BackgroundColor="White" Margin="0,10,0,10"/>
+
+            <!-- Settings Section -->
+            <Label Text="Settings" TextColor="White" FontSize="Large" />
+            <StackLayout Spacing="10">
+                <!-- Language -->
+                <Label Text="Language" TextColor="Gray" FontSize="Small" />
+                <Frame BackgroundColor="#333333" CornerRadius="10" Padding="10">
+                    <StackLayout Orientation="Horizontal" Spacing="10">
+                        <Image Source="Resources/AppIcon/language.png" WidthRequest="25" HeightRequest="25" />
+                        <Picker TextColor="White">
+                            <Picker.Items>
+                                <x:String>English</x:String>
+                                <x:String>Spanish</x:String>
+                                <x:String>French</x:String>
+                            </Picker.Items>
+                        </Picker>
+                    </StackLayout>
+                </Frame>
+                <!-- Notifications -->
+                <Label Text="Notifications" TextColor="Gray" FontSize="Small" />
+                <Frame BackgroundColor="#333333" CornerRadius="10" Padding="10">
+                    <StackLayout Orientation="Horizontal" Spacing="10">
+                        <Image Source="Resources/AppIcon/inotification.png" WidthRequest="25" HeightRequest="25" />
+                        <Switch IsToggled="True" />
+                        <Label Text="Enable notifications" TextColor="White" VerticalOptions="Center" />
+                    </StackLayout>
+                </Frame>
+                <!-- Dark/Light Mode -->
+                <Label Text="Theme Mode" TextColor="Gray" FontSize="Small" />
+                <Frame BackgroundColor="#333333" CornerRadius="10" Padding="10">
+                    <StackLayout Orientation="Horizontal" Spacing="10">
+                        <Image Source="Resources/AppIcon/darkmode.png" WidthRequest="25" HeightRequest="25" />
+                        <Switch IsToggled="True" />
+                        <Label Text="Dark Mode" TextColor="White" VerticalOptions="Center" />
+                    </StackLayout>
+                </Frame>
+                <!-- Permissions -->
+                <Label Text="Permissions" TextColor="Gray" FontSize="Small" />
+                <Frame BackgroundColor="#333333" CornerRadius="10" Padding="10">
+                    <StackLayout Orientation="Horizontal" Spacing="10">
+                        <Image Source="Resources/AppIcon/permissions.png" WidthRequest="25" HeightRequest="25" />
+                        <Button Text="Manage Permissions" BackgroundColor="Transparent" TextColor="White" />
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+
+            <!-- Footer -->
+            <Grid Padding="10" RowSpacing="5" ColumnSpacing="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Button Text="Sign Out" BackgroundColor="Transparent" TextColor="White" Grid.Column="0" HorizontalOptions="Start" />
+                <Button Text="Privacy &amp; Policy" BackgroundColor="Transparent" TextColor="White" Grid.Column="1" HorizontalOptions="End" />
+            </Grid>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

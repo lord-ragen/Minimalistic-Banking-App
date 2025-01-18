@@ -1,0 +1,83 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="natmobile.NotificationPage"
+             Title="Notifications"
+             >
+
+    <ContentPage.Content>
+        <VerticalStackLayout Padding="10" Spacing="20">
+
+            <!-- Back Button -->
+            <Button Text="Back"
+                    FontSize="14"
+                    BackgroundColor="Transparent"
+                    TextColor="White"
+                    HorizontalOptions="Start"
+                    Clicked="OnBackButtonClicked" />
+
+            <!-- Notification Title -->
+            <Label Text="Notifications"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   TextColor="White"
+                   HorizontalOptions="Center" />
+
+            <!-- Mark All Read and Sort Buttons -->
+            <Grid ColumnDefinitions="*,Auto">
+                <!-- Mark All Read -->
+                <Button Text="Mark All Read"
+                        FontSize="14"
+                        BackgroundColor="Transparent"
+                        TextColor="White"
+                        HorizontalOptions="Start"
+                        Clicked="OnMarkAllReadClicked" />
+
+                <!-- Sort Button -->
+                <Button Text="Sort"
+                        FontSize="14"
+                        BackgroundColor="Transparent"
+                        TextColor="White"
+                        Grid.Column="1"
+                        HorizontalOptions="End"
+                        Clicked="OnSortButtonClicked" />
+            </Grid>
+
+            <!-- Notification List -->
+            <CollectionView x:Name="NotificationList"
+                            BackgroundColor="Transparent"
+                            ItemsSource="{Binding Notifications}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="10" ColumnDefinitions="Auto,*,Auto" RowSpacing="5">
+                            <!-- Notification Icon -->
+                            <Image Source="{Binding Icon}"
+                                   WidthRequest="24"
+                                   HeightRequest="24" />
+
+                            <!-- Notification Details -->
+                            <VerticalStackLayout Grid.Column="1" Spacing="2">
+                                <Label Text="{Binding Title}"
+                                       FontSize="16"
+                                       TextColor="White" />
+                                <Label Text="{Binding Message}"
+                                       FontSize="14"
+                                       TextColor="Gray" />
+                                <Label Text="{Binding DateTime, StringFormat='{0:yyyy-MM-dd HH:mm}'}"
+                                       FontSize="12"
+                                       TextColor="Gray" />
+                            </VerticalStackLayout>
+
+                            <!-- Notification Status -->
+                            <Label Text="{Binding Status}"
+                                   FontSize="14"
+                                   TextColor="{Binding StatusColor}"
+                                   Grid.Column="2"
+                                   HorizontalOptions="End" />
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </VerticalStackLayout>
+    </ContentPage.Content>
+</ContentPage>

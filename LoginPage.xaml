@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="natmobile.LoginPage"
+             BackgroundImageSource="Resources/Images/ladyatm.jpeg">
+    <ContentPage.Content>
+        <Grid>
+            <!-- Background Image -->
+            <Image Source="Resources/Images/ladyatm.jpeg" Aspect="AspectFill" />
+
+            <!-- Transparent Overlay -->
+            <BoxView Color="#FF8C00" Opacity="0.6" />
+
+            <!-- Main Content -->
+            <Grid Padding="20">
+                
+                
+                <!-- Logo -->
+                <Image Source="Resources/AppIcon/nbk.png"
+                       WidthRequest="100"
+                       HeightRequest="100"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Start"
+                       Margin="0,40,0,20" />
+
+                <!-- Welcome Page -->
+                <StackLayout x:Name="WelcomePage" IsVisible="True" VerticalOptions="CenterAndExpand" HorizontalOptions="Center">
+                    <Label Text="Welcome" TextColor="White" FontSize="50" FontAttributes="Bold" HorizontalOptions="Center" />
+                    <Button Text="Get Started"
+                            TextColor="White"
+                            BackgroundColor="Transparent"
+                            BorderColor="White"
+                            BorderWidth="2"
+                            Clicked="OnGetStartedClicked" />
+                </StackLayout>
+
+                <!-- Login Page -->
+                <StackLayout x:Name="LoginStackLayout" IsVisible="False" VerticalOptions="CenterAndExpand">
+                    <Label Text="Login" TextColor="White" FontSize="50" FontAttributes="Bold" HorizontalOptions="Center" />
+                    <Entry Placeholder="Name" BackgroundColor="#D3D3D3" TextColor="Black" />
+                    <Entry Placeholder="Password" IsPassword="True" BackgroundColor="#D3D3D3" TextColor="Black" />
+                    <Button Text="Sign In"
+                            TextColor="White"
+                            BackgroundColor="#8B4513"
+                            Clicked="OnLoginClicked" />
+                    <Label Text="Don't have an account? Sign Up"
+                           TextColor="White"
+                           HorizontalOptions="Center"
+                           FontSize="Small">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnSignUpTapped" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </StackLayout>
+
+                <!-- Sign Up Page -->
+                <StackLayout x:Name="SignUpPage" IsVisible="False" VerticalOptions="CenterAndExpand">
+                    <Label Text="Sign Up" TextColor="White" FontSize="50" FontAttributes="Bold" HorizontalOptions="Center" />
+                    <Entry Placeholder="Name" BackgroundColor="#D3D3D3" TextColor="Black" />
+                    <Entry Placeholder="Email" BackgroundColor="#D3D3D3" TextColor="Black" />
+                    <Entry Placeholder="Password" IsPassword="True" BackgroundColor="#D3D3D3" TextColor="Black" />
+                    <Button Text="Sign Up"
+                            TextColor="White"
+                            BackgroundColor="#8B4513"
+                            Clicked="OnSignUpClicked" />
+                </StackLayout>
+            </Grid>
+
+            <!-- Bottom Left Boxes -->
+            <StackLayout Orientation="Vertical" VerticalOptions="End" HorizontalOptions="Start" Margin="25,0">
+                
+                <!-- "For People" Box -->
+                <ContentView BackgroundColor="#FFC107" 
+                             Padding="0" 
+                             WidthRequest="100" 
+                             Margin="0,0,0,0">
+                    <Label Text="For People." TextColor="White" FontSize="15" FontAttributes="Bold" HorizontalOptions="Center" />
+                </ContentView>
+                
+                <!-- "For Better" Box -->
+                <ContentView BackgroundColor="#8B4513" 
+                             Padding="0" 
+                             WidthRequest="100" 
+                             Margin="0,5,60,10">
+                    <Label Text="For Better." TextColor="White" FontSize="15" FontAttributes="Bold" HorizontalOptions="Center" />
+                </ContentView>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
